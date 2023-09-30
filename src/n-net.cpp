@@ -1,4 +1,6 @@
 #include "n-net.h"
+#include <cstddef>
+#include <fstream>
 
 using namespace NNet;
 
@@ -12,9 +14,15 @@ Net::Net(const std::vector<unsigned> &topology){
         unsigned num_outputs = (layer == num_layers - 1) ? 0 : topology[layer + 1];
 
         for (unsigned neuron = 0; neuron <= topology[layer]; neuron++) {
-            m_layers.back().push_back(Neuron(num_outputs, neuron));
+            m_layers.back().push_back(Neuron(num_outputs, neuron, this));
         }
+
+        m_layers.back().back().set_output(1.0);
     }
+}
+
+Net::~Net() {
+
 }
 
 void Net::feed_forward(const std::vector<netnum_t> &input_vals) {
@@ -48,6 +56,7 @@ void Net::back_prop(const std::vector<netnum_t> &target) {
 
     // calc recent avg error
     m_recent_avg_error = (m_recent_avg_error * m_recent_avg_smoothing_factor + m_error) / (m_recent_avg_smoothing_factor + 1.0);
+    // std::cout << "Error: " << m_recent_avg_error << std::endl;
 
     // calc output layer gradients
     for (unsigned n = 0; n < output_layer.size() - 1; n++) {
@@ -74,3 +83,120 @@ void Net::back_prop(const std::vector<netnum_t> &target) {
         }
     }
 }
+
+void Net::get_results(std::vector<netnum_t> &result) const {
+    result.clear();
+
+    for (unsigned n = 0; n < m_layers.back().size() - 1; n++) {
+        result.push_back(m_layers.back()[n].get_output());
+    }
+}
+
+void Net::train(
+    const std::vector<std::vector<netnum_t>> &input_vals, 
+    const std::vector<std::vector<netnum_t>> &target_vals,
+    unsigned num_passes
+) {
+    assert(input_vals.size() == target_vals.size());
+
+    for (unsigned pass = 0; pass < num_passes; pass++) {
+        for (unsigned i = 0; i < input_vals.size(); i++) {
+            feed_forward(input_vals[i]);
+            back_prop(target_vals[i]);
+        }
+
+        // if (pass % 1000 == 0) {
+        //     std::cout << "Pass: " << pass << "\tError: " << m_recent_avg_error << std::endl;
+        // }
+    }
+}
+
+void Net::predict(const std::vector<netnum_t> &input_vals, std::vector<netnum_t> &result_vals) {
+    feed_forward(input_vals);
+    get_results(result_vals);
+}
+
+void Net::save_model(const char *filename) {
+    std::ofstream file(filename, std::ios::binary);
+
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file for writing: " << filename << std::endl;
+        return;
+    }
+
+    // clear file
+    file.seekp(0, std::ios::beg);
+
+    // save topology
+    unsigned num_layers = m_layers.size();
+    file.write((char*)&num_layers, sizeof(unsigned));
+
+    // save neurons per layer
+    for (unsigned layer = 0; layer < num_layers; layer++) {
+        unsigned num_neurons = m_layers[layer].size() - 1;
+        file.write((char*)&num_neurons, sizeof(unsigned));
+    }
+
+    // save weights
+    for (unsigned layer = 0; layer < num_layers; layer++) {
+        for (unsigned n = 0; n < m_layers[layer].size(); n++) {
+            Neuron &neuron = m_layers[layer][n];
+
+            unsigned num_weights = neuron.m_output_weights.size();
+            file.write((char*)&num_weights, sizeof(unsigned));
+
+            for (unsigned w = 0; w < num_weights; w++) {
+                file.write((char*)&neuron.m_output_weights[w].weight, sizeof(netnum_t));
+                file.write((char*)&neuron.m_output_weights[w].d_weight, sizeof(netnum_t));
+            }
+        }
+    }
+
+    file.close();
+}
+
+
+Net Net::load_model(const char *filename) {
+    std::ifstream file(filename, std::ios::binary);
+
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file for reading: " << filename << std::endl;
+        return Net();
+    }
+
+    // load topology
+    unsigned num_layers;
+    file.read((char*)&num_layers, sizeof(unsigned));
+
+    std::vector<unsigned> topology;
+    topology.resize(num_layers);
+
+    // load neurons per layer
+    for (unsigned layer = 0; layer < num_layers; layer++) {
+        unsigned num_neurons;
+        file.read((char*)&num_neurons, sizeof(unsigned));
+        topology[layer] = num_neurons;
+    }
+
+    Net net(topology);
+
+    // load weights
+    for (unsigned layer = 0; layer < num_layers; layer++) {
+        for (unsigned n = 0; n < net.m_layers[layer].size(); n++) {
+            Neuron &neuron = net.m_layers[layer][n];
+
+            unsigned num_weights;
+            file.read((char*)&num_weights, sizeof(unsigned));
+
+            for (unsigned w = 0; w < num_weights; w++) {
+                file.read((char*)&neuron.m_output_weights[w].weight, sizeof(netnum_t));
+                file.read((char*)&neuron.m_output_weights[w].d_weight, sizeof(netnum_t));
+            }
+        }
+    }
+
+    file.close();
+
+    return net;
+}
+
