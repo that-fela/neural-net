@@ -7,11 +7,12 @@
 #include <math.h>
 #include <cstdlib>
 #include <fstream>
+#include <filesystem>
 
 namespace NNet {
     class Neuron;
     typedef std::vector<Neuron> Layer;
-    typedef double netnum_t;
+    typedef float netnum_t;
 
     struct Connection {
         netnum_t weight;
@@ -77,5 +78,25 @@ namespace NNet {
         unsigned                m_index;
         netnum_t                m_gradient;
         const Net               *m_net;
+    };
+
+
+    // -------------
+    // DataLoader
+    // -------------
+    class DataLoader {
+    public:
+        DataLoader() {}
+        ~DataLoader() {}
+
+        static DataLoader from_png_folder(const char *filename);
+        static std::vector<NNet::netnum_t> from_png(const char *filename, const std::vector<netnum_t> &target);
+
+        std::vector<std::vector<netnum_t>> get_input_values() const { return m_input_values; }
+        std::vector<std::vector<netnum_t>> get_target_values() const { return m_target_values; }
+    private:
+
+        std::vector<std::vector<netnum_t>> m_input_values;
+        std::vector<std::vector<netnum_t>> m_target_values;
     };
 }

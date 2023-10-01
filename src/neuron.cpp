@@ -8,15 +8,15 @@ netnum_t random_weight() {
 
 netnum_t transfer_func(netnum_t num) {
     // using sigmoid
-    // return 1.0 / (1.0 + exp(-num));
-    return tanh(num);
+    return 1.0 / (1.0 + exp(-num));
+    // return tanh(num);
 }
 
 netnum_t transfer_func_derv(netnum_t num) {
     // using derivative of sigmoid
-    // netnum_t o = 1.0 / (1.0 + exp(-num));
-    // return o * (1 - o);
-    return 1.0 - num * num;
+    netnum_t o = 1.0 / (1.0 + exp(-num));
+    return o * (1 - o);
+    // return 1.0 - num * num;
 }
 
 Neuron::Neuron(unsigned num_outputs, unsigned index, const Net *net_ref) {

@@ -1,6 +1,9 @@
 #include "n-net.h"
+#include <cassert>
 #include <cstddef>
 #include <fstream>
+#include <iostream>
+#include <vector>
 
 using namespace NNet;
 
@@ -98,6 +101,26 @@ void Net::train(
     unsigned num_passes
 ) {
     assert(input_vals.size() == target_vals.size());
+    
+    // input the same size as input layer
+    if (input_vals[0].size() != m_layers[0].size() - 1) {
+        std::cerr << "Input size does not match input layer size" << std::endl;
+
+        std::cerr << "Input size: " << input_vals[0].size() << std::endl;
+        std::cerr << "Input layer size: " << m_layers[0].size() - 1 << std::endl;
+
+        exit(1);
+    }
+
+    // target the same size as output layer
+    if (target_vals[0].size() != m_layers.back().size() - 1) {
+        std::cerr << "Target size does not match output layer size" << std::endl;
+
+        std::cerr << "Target size: " << target_vals[0].size() << std::endl;
+        std::cerr << "Output layer size: " << m_layers.back().size() - 1 << std::endl;
+
+        exit(1);
+    }
 
     for (unsigned pass = 0; pass < num_passes; pass++) {
         for (unsigned i = 0; i < input_vals.size(); i++) {
@@ -105,9 +128,9 @@ void Net::train(
             back_prop(target_vals[i]);
         }
 
-        // if (pass % 1000 == 0) {
-        //     std::cout << "Pass: " << pass << "\tError: " << m_recent_avg_error << std::endl;
-        // }
+        if (pass % 100 == 0) {
+            std::cout << "Pass: " << pass << "\tError: " << m_recent_avg_error << std::endl;
+        }
     }
 }
 
