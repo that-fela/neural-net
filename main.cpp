@@ -19,48 +19,21 @@ int main(int, char**){
 }
 
 void test_bench() {
-    NNet::Net net;
+    NNet::DataLoader loader = NNet::DataLoader::from_png_folder("../test-data/my-hand-written-numbers");
 
-    if (1) {
-        NNet::DataLoader loader = NNet::DataLoader::from_png_folder("../test-data/my-hand-written-numbers");
-        
-        // print the first image
-        for (int ii = 0; ii < 10; ii++) {
-            for (int i = 0; i < 20; i++) {
-                for (int j = 0; j < 20; ++j) {
-                    std::cout << (loader.get_input_values()[ii][i * 20 + j]);
-                }
-                std::cout << std::endl;
-            }
+    NNet::Net net({400, 400, 100, 10});
 
-            for (int i = 0; i < 10; ++i) {
-                std::cout << (loader.get_target_values()[ii][i]) << " ";
-            }
-            std::cout << std::endl;
-        }
+    auto start_time = std::chrono::high_resolution_clock::now();
+    net.train(loader.get_input_values(), loader.get_target_values(), 1000);
+    auto end_time = std::chrono::high_resolution_clock::now();
 
-        net = NNet::Net({400, 100, 10});
-        net.eta = 0.15; // [0.0..1.0] overall net training rate
-        net.alpha = 0.5; // [0.0..n] multiplier of last weight change (momentum)
+    std::cout << "Training time: " << std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count() << "ms" << std::endl;
 
-        net.train(loader.get_input_values(), loader.get_target_values(), 10000);
+    std::cout << "Average error: " << net.get_recent_avg_error() << std::endl;
 
-        std::cout << "Average error: " << net.get_recent_avg_error() << std::endl;
+    net.save_model("my-hand-written-numbers.net");
 
-        net.save_model("my-hand-written-numbers.net");
-    } else {
-        net = NNet::Net::load_model("my-hand-written-numbers.net");
-    }
 
-    // std::vector<NNet::netnum_t> result;
-    // for (int ii = 0; ii < 10; ii++) {
-    //     net.predict(loader.get_input_values()[ii], result);
-
-    //     for (int i = 0; i < 10; ++i) {
-    //         std::cout << round(result[i]) << " ";
-    //     }
-    //     std::cout << std::endl;
-    // }
 
     auto to_test = NNet::DataLoader::from_png("../test-data/my-hand-written-numbers/7.png", {});
     
@@ -71,6 +44,7 @@ void test_bench() {
         }
         std::cout << std::endl;
     }
+
 
     std::vector<NNet::netnum_t> output;
     net.predict(to_test, output);

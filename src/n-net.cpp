@@ -128,9 +128,9 @@ void Net::train(
             back_prop(target_vals[i]);
         }
 
-        if (pass % 100 == 0) {
-            std::cout << "Pass: " << pass << "\tError: " << m_recent_avg_error << std::endl;
-        }
+        // if (pass % 100 == 0) {
+        //     std::cout << "Pass: " << pass << "\tError: " << m_recent_avg_error << std::endl;
+        // }
     }
 }
 

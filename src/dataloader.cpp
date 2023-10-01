@@ -1,6 +1,6 @@
 #include "n-net.h"
 
-#include "../include/lodepng.h"
+#include "../lib/lodepng.h"
 #include <cassert>
 
 using namespace NNet;

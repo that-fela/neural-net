@@ -8,6 +8,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <filesystem>
+#include <thread>
 
 namespace NNet {
     class Neuron;
