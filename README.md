@@ -4,8 +4,9 @@ A simple neural network implementation in C++.
 ## Features
 - [ ] Different activation functions
 - [x] Loading / Saving models
-- [ ] Multi threaded training
-- [ ] Cache optimisation
+- [x] Multi threaded training
+- [x] Cache optimisation
+- [ ] GPU support
 
 ## Usage
 ```cpp

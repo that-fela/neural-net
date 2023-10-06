@@ -3,11 +3,14 @@
 #include <cstddef>
 #include <fstream>
 #include <iostream>
+#include <omp.h>
 #include <vector>
 
 using namespace NNet;
 
-Net::Net(const std::vector<unsigned> &topology){
+Net::Net(const std::vector<unsigned> &topology, unsigned num_threads){
+    omp_set_num_threads(num_threads);
+
     unsigned num_layers = topology.size();
     assert(num_layers > 1);
 
@@ -38,6 +41,7 @@ void Net::feed_forward(const std::vector<netnum_t> &input_vals) {
     for (unsigned layer = 1; layer < m_layers.size(); layer++) {
         Layer &previous_layer = m_layers[layer - 1];
 
+        #pragma omp parallel for
         for (unsigned n = 0; n < m_layers[layer].size() - 1; n++) {
             m_layers[layer][n].feed_forward(previous_layer, n);
         }
@@ -71,18 +75,21 @@ void Net::back_prop(const std::vector<netnum_t> &target) {
         Layer &hidden_layer = m_layers[layer];
         Layer &next_layer = m_layers[layer + 1];
 
+        #pragma omp parallel for
         for (unsigned n = 0; n < hidden_layer.size(); n++) {
             hidden_layer[n].calc_hidden_gradients(next_layer);
         }
     }
+
 
     // update connection weights
     for (unsigned layer = m_layers.size() - 1; layer > 0; layer--) {
         Layer &layer_ = m_layers[layer];
         Layer &prev_layer = m_layers[layer - 1];
 
-        for (unsigned n = 0; n < layer_.size() - 1; n++) {
-            layer_[n].update_input_weights(prev_layer);
+        #pragma omp parallel for
+        for (Neuron& neuron : layer_) {
+            neuron.update_input_weights(prev_layer);
         }
     }
 }
@@ -122,19 +129,28 @@ void Net::train(
         exit(1);
     }
 
+    auto start_time = std::chrono::high_resolution_clock::now();
+    auto time_per_pass = start_time;
+
     for (unsigned pass = 0; pass < num_passes; pass++) {
         for (unsigned i = 0; i < input_vals.size(); i++) {
             feed_forward(input_vals[i]);
             back_prop(target_vals[i]);
         }
 
-        // if (pass % 100 == 0) {
-        //     std::cout << "Pass: " << pass << "\tError: " << m_recent_avg_error << std::endl;
-        // }
+        if (pass % 100 == 0) {
+            std::cout << "Pass: " << pass << "\tError: " << std::setprecision(6) << m_recent_avg_error << "\tTime per pass: " << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - time_per_pass).count() << "ms" << std::endl;
+            time_per_pass = std::chrono::high_resolution_clock::now();
+        }
     }
+
+    auto end_time = std::chrono::high_resolution_clock::now();
+
+    std::cout << "Training time: " << std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time).count() << "ms" << std::endl;
+
 }
 
-void Net::predict(const std::vector<netnum_t> &input_vals, std::vector<netnum_t> &result_vals) {
+void Net::predict(const netnum_vec_t &input_vals, netnum_vec_t &result_vals) {
     feed_forward(input_vals);
     get_results(result_vals);
 }
