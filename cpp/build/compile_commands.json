@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/leo/dev/neural-net/cpp/build",
+  "command": "/usr/bin/g++-10    -pg -fopenmp -g -o CMakeFiles/neural-net.dir/main.cpp.o -c /home/leo/dev/neural-net/cpp/main.cpp",
+  "file": "/home/leo/dev/neural-net/cpp/main.cpp"
+},
+{
+  "directory": "/home/leo/dev/neural-net/cpp/build",
+  "command": "/usr/bin/g++-10    -pg -fopenmp -g -o CMakeFiles/neural-net.dir/src/n-net.cpp.o -c /home/leo/dev/neural-net/cpp/src/n-net.cpp",
+  "file": "/home/leo/dev/neural-net/cpp/src/n-net.cpp"
+},
+{
+  "directory": "/home/leo/dev/neural-net/cpp/build",
+  "command": "/usr/bin/g++-10    -pg -fopenmp -g -o CMakeFiles/neural-net.dir/src/neuron.cpp.o -c /home/leo/dev/neural-net/cpp/src/neuron.cpp",
+  "file": "/home/leo/dev/neural-net/cpp/src/neuron.cpp"
+},
+{
+  "directory": "/home/leo/dev/neural-net/cpp/build",
+  "command": "/usr/bin/g++-10    -pg -fopenmp -g -o CMakeFiles/neural-net.dir/lib/lodepng.cpp.o -c /home/leo/dev/neural-net/cpp/lib/lodepng.cpp",
+  "file": "/home/leo/dev/neural-net/cpp/lib/lodepng.cpp"
+}
+]

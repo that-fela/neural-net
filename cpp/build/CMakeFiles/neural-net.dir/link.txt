@@ -1,0 +1,1 @@
+/usr/bin/g++-10  -pg -fopenmp -g  -pg -fopenmp -rdynamic CMakeFiles/neural-net.dir/main.cpp.o CMakeFiles/neural-net.dir/src/n-net.cpp.o CMakeFiles/neural-net.dir/src/neuron.cpp.o CMakeFiles/neural-net.dir/lib/lodepng.cpp.o -o neural-net 
