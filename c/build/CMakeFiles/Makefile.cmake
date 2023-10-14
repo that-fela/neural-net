@@ -26,10 +26,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.22/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.22/Modules/Compiler/GNU.cmake"
   "/usr/share/cmake-3.22/Modules/DartConfiguration.tcl.in"
+  "/usr/share/cmake-3.22/Modules/FindPNG.cmake"
+  "/usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake"
+  "/usr/share/cmake-3.22/Modules/FindPackageMessage.cmake"
+  "/usr/share/cmake-3.22/Modules/FindZLIB.cmake"
   "/usr/share/cmake-3.22/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.22/Modules/Platform/Linux-GNU.cmake"
   "/usr/share/cmake-3.22/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-3.22/Modules/Platform/UnixPaths.cmake"
+  "/usr/share/cmake-3.22/Modules/SelectLibraryConfigurations.cmake"
   "/usr/share/cmake-3.22/Templates/CPackConfig.cmake.in"
   )
 

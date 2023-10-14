@@ -14,7 +14,7 @@ CostDataFile:
 Site: DESKTOPfdsfsdf
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Linux-g++-10
+BuildName: Linux-c++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -62,8 +62,8 @@ UpdateOptions:
 UpdateType: 
 
 # Compiler info
-Compiler: /usr/bin/g++-10
-CompilerVersion: 10.5.0
+Compiler: /usr/bin/c++
+CompilerVersion: 11.4.0
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 

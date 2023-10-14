@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/neural-net.dir/lib/lodepng.cpp.o.d"
   "CMakeFiles/neural-net.dir/main.cpp.o"
   "CMakeFiles/neural-net.dir/main.cpp.o.d"
+  "CMakeFiles/neural-net.dir/src/dataloader.cpp.o"
+  "CMakeFiles/neural-net.dir/src/dataloader.cpp.o.d"
   "CMakeFiles/neural-net.dir/src/n-net.cpp.o"
   "CMakeFiles/neural-net.dir/src/n-net.cpp.o.d"
   "CMakeFiles/neural-net.dir/src/neuron.cpp.o"

@@ -5,9 +5,9 @@
 #define NN_ALPHA    0.5
 #define NN_RECENT_AVERAGE_SMOOTHING_FACTOR 100.0
 
-#define NN_MAX_LAYERS       3
-#define NN_MAX_LAYER_SIZE   4
-#define NN_CONNECTIONS      4
+#define NN_MAX_LAYERS       5
+#define NN_MAX_LAYER_SIZE   402
+#define NN_CONNECTIONS      402
 
 #include <setjmp.h>
 #include <asm-generic/errno.h>
@@ -15,10 +15,12 @@
 #include <stdio.h>
 #include <omp.h>
 #include <math.h>
+#include <time.h>
 
 typedef float netnum_t;
 typedef struct Neuron Neuron;
 typedef struct Net Net;
+typedef netnum_t** MatInput;
 
 typedef struct {
     netnum_t weight;
@@ -57,6 +59,12 @@ struct Net{
 // Public
 Net         nn_create_net(unsigned num_layers, unsigned *input_layer_sizes, unsigned thread_count);
 netnum_t    nn_get_error(Net *net);
+void        nn_train(
+                Net *net, unsigned num_passes,
+                netnum_t **train_input, unsigned train_input_size, unsigned train_input_width,
+                netnum_t **expected_output, unsigned expected_output_size, unsigned expected_output_width
+            );
+void        nn_predict(Net *net, netnum_t *input, unsigned input_size, netnum_t *results, unsigned result_size);
 
 // Private
 void nn_feed_forward(Net *net, netnum_t *input, unsigned input_size);

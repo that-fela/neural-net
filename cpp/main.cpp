@@ -6,22 +6,80 @@
 #include <ostream>
 #include <vector>
 
-#include "src/n-net.h"
+#include "include/n-net.h"
+#include "include/dataloader.h"
 
 void test_XOR();
 void test_ABC();
 void test_save();
-void test_bench();
+void test_images();
 void stock_market_test();
+void large_test();
+
+typedef NNet::netnum_t netnum_t;
 
 int main(int, char**){
-    test_XOR();
+    // test_XOR();
     // test_ABC();
     // test_save();
-    // test_bench();
+    test_images();
     // stock_market_test();
-
+    // large_test();
 }
+
+const unsigned data_length = 15;
+netnum_t *get_large() {
+    netnum_t *inputs = (netnum_t*)malloc(data_length * 400 * sizeof(netnum_t));
+
+    for (unsigned i = 0; i < data_length; i++) {
+        for (unsigned j = 0; j < 400; j++) {
+            inputs[i * 400 + j] = (netnum_t)(rand() % 1000) / 1000;
+        }
+    }
+
+    return inputs;
+}
+
+netnum_t *get_large_awns() {
+    netnum_t *inputs = (netnum_t*)malloc(data_length * 1 * sizeof(netnum_t));
+
+    for (unsigned i = 0; i < data_length; i++) {
+        inputs[i] = (netnum_t)(rand() % 1000) / 1000;
+    }
+
+    return inputs;
+}
+
+void large_test() {
+
+    std::vector<std::vector<netnum_t>> inputs;
+    std::vector<std::vector<netnum_t>> targets;
+
+    netnum_t *input_data = get_large();
+    netnum_t *target_data = get_large_awns();
+
+    for (unsigned i = 0; i < data_length; i++) {
+        std::vector<netnum_t> tin;
+        std::vector<netnum_t> tout;
+
+        for (unsigned j = 0; j < 400; j++) {
+            tin.push_back(input_data[i * 400 + j]);
+        }
+
+        inputs.push_back(tin);
+
+        tout.push_back(target_data[i]);
+
+        targets.push_back(tout);
+    }
+
+    std::cout << "input size: " << inputs.size() << "x" << inputs[0].size() << std::endl;
+
+    NNet::Net net({400, 360, 80, 1}, 8);
+
+    net.train(inputs, targets, 1000);
+}
+
 
 void stock_market_test() {
     const int N = 12*6;  // Number of elements to read
@@ -122,46 +180,46 @@ void stock_market_test() {
 }
 
 
-// void test_bench() {
-//     NNet::DataLoader loader = NNet::DataLoader::from_png_folder("../test-data/my-hand-written-numbers");
+void test_images() {
+    DataLoader loader = DataLoader::from_png_folder("../../test-data/my-hand-written-numbers");
 
-//     unsigned input_size = (unsigned)loader.get_input_values()[0].size();
-//     unsigned output_size = (unsigned)loader.get_target_values()[0].size();
+    unsigned input_size = (unsigned)loader.get_input_values()[0].size();
+    unsigned output_size = (unsigned)loader.get_target_values()[0].size();
 
-//     std::cout << "Input size: " << input_size << std::endl;
-//     std::cout << "Output size: " << output_size << std::endl;
+    std::cout << "Input size: " << input_size << std::endl;
+    std::cout << "Output size: " << output_size << std::endl;
 
-//     NNet::Net net({input_size, (unsigned)(input_size*0.9), (unsigned)(input_size*0.2), output_size}, 8);
+    NNet::Net net({input_size, (unsigned)(input_size*0.9), (unsigned)(input_size*0.2), output_size}, 8);
 
-//     // adjust the learning rate
-//     net.eta = 0.10;
-//     net.alpha = 0.5;
+    // adjust the learning rate
+    net.eta = 0.10;
+    net.alpha = 0.5;
 
-//     net.train(loader.get_input_values(), loader.get_target_values(), 10000);
+    net.train(loader.get_input_values(), loader.get_target_values(), 10000);
 
-//     std::cout << "Average error: " << net.get_recent_avg_error() << std::endl;
+    std::cout << "Average error: " << net.get_recent_avg_error() << std::endl;
 
-//     net.save_model("my-hand-written-numbers.net");
+    net.save_model("my-hand-written-numbers.net");
 
 
-//     auto to_test = NNet::DataLoader::from_png("../test-data/my-hand-written-numbers/2.png", {});
+    auto to_test = DataLoader::from_png("../../test-data/my-hand-written-numbers/2.png", {});
     
-//     // print the to_test image
-//     // for (int i = 0; i < 20; i++) {
-//     //     for (int j = 0; j < 20; ++j) {
-//     //         std::cout << (to_test[i * 20 + j]);
-//     //     }
-//     //     std::cout << std::endl;
-//     // }
+    // print the to_test image
+    // for (int i = 0; i < 20; i++) {
+    //     for (int j = 0; j < 20; ++j) {
+    //         std::cout << (to_test[i * 20 + j]);
+    //     }
+    //     std::cout << std::endl;
+    // }
 
 
-//     std::vector<NNet::netnum_t> output;
-//     net.predict(to_test, output);
+    std::vector<NNet::netnum_t> output;
+    net.predict(to_test, output);
 
-//     for(auto &i : output) {
-//         std::cout << round(i) << " ";
-//     }
-// }
+    for(auto &i : output) {
+        std::cout << round(i) << " ";
+    }
+}
 
 
 void test_XOR() {

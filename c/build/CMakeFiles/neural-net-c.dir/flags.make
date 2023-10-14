@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = 
 
-C_FLAGS =  -fopenmp -g
+C_FLAGS =  -fopenmp -O3 -DNDEBUG
 

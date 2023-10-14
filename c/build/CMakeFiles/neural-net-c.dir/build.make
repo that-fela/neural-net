@@ -124,6 +124,7 @@ neural-net-c: CMakeFiles/neural-net-c.dir/main.c.o
 neural-net-c: CMakeFiles/neural-net-c.dir/src/net.c.o
 neural-net-c: CMakeFiles/neural-net-c.dir/src/neuron.c.o
 neural-net-c: CMakeFiles/neural-net-c.dir/build.make
+neural-net-c: /usr/local/lib/libpng.so
 neural-net-c: CMakeFiles/neural-net-c.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/leo/dev/neural-net/c/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable neural-net-c"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/neural-net-c.dir/link.txt --verbose=$(VERBOSE)

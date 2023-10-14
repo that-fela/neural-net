@@ -1,17 +1,17 @@
 [
 {
   "directory": "/home/leo/dev/neural-net/c/build",
-  "command": "/usr/bin/gcc-12    -fopenmp -g -o CMakeFiles/neural-net-c.dir/main.c.o -c /home/leo/dev/neural-net/c/main.c",
+  "command": "/usr/bin/gcc-12    -fopenmp -O3 -DNDEBUG -o CMakeFiles/neural-net-c.dir/main.c.o -c /home/leo/dev/neural-net/c/main.c",
   "file": "/home/leo/dev/neural-net/c/main.c"
 },
 {
   "directory": "/home/leo/dev/neural-net/c/build",
-  "command": "/usr/bin/gcc-12    -fopenmp -g -o CMakeFiles/neural-net-c.dir/src/net.c.o -c /home/leo/dev/neural-net/c/src/net.c",
+  "command": "/usr/bin/gcc-12    -fopenmp -O3 -DNDEBUG -o CMakeFiles/neural-net-c.dir/src/net.c.o -c /home/leo/dev/neural-net/c/src/net.c",
   "file": "/home/leo/dev/neural-net/c/src/net.c"
 },
 {
   "directory": "/home/leo/dev/neural-net/c/build",
-  "command": "/usr/bin/gcc-12    -fopenmp -g -o CMakeFiles/neural-net-c.dir/src/neuron.c.o -c /home/leo/dev/neural-net/c/src/neuron.c",
+  "command": "/usr/bin/gcc-12    -fopenmp -O3 -DNDEBUG -o CMakeFiles/neural-net-c.dir/src/neuron.c.o -c /home/leo/dev/neural-net/c/src/neuron.c",
   "file": "/home/leo/dev/neural-net/c/src/neuron.c"
 }
 ]

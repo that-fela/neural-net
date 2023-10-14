@@ -1,0 +1,219 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 69.03      3.70     3.70  4823203     0.00     0.00  NNet::Neuron::update_input_weights(std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >&)
+ 27.99      5.20     1.50  3257154     0.00     0.00  NNet::Neuron::feed_forward(std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > const&, unsigned int)
+  2.80      5.35     0.15   913473     0.00     0.00  NNet::Neuron::calc_hidden_gradients(std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > const&)
+  0.19      5.36     0.01       10     0.00     0.54  void std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > >::_M_realloc_insert<std::vector<float, std::allocator<float> > const&>(__gnu_cxx::__normal_iterator<std::vector<float, std::allocator<float> >*, std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > >, std::vector<float, std::allocator<float> > const&)
+  0.00      5.36     0.00    15000     0.00     0.00  NNet::Net::back_prop(std::vector<float, std::allocator<float> > const&)
+  0.00      5.36     0.00    15000     0.00     0.00  NNet::Neuron::calc_output_gradients(float)
+  0.00      5.36     0.00     6979     0.00     0.00  void std::vector<NNet::Connection, std::allocator<NNet::Connection> >::_M_realloc_insert<NNet::Connection>(__gnu_cxx::__normal_iterator<NNet::Connection*, std::vector<NNet::Connection, std::allocator<NNet::Connection> > >, NNet::Connection&&)
+  0.00      5.36     0.00      845     0.00     0.00  NNet::Neuron::Neuron(unsigned int, unsigned int, NNet::Net const*)
+  0.00      5.36     0.00       30     0.00     0.00  void std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >::_M_realloc_insert<NNet::Neuron>(__gnu_cxx::__normal_iterator<NNet::Neuron*, std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > >, NNet::Neuron&&)
+  0.00      5.36     0.00       15     0.00     0.00  void std::vector<float, std::allocator<float> >::_M_realloc_insert<float const&>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float const&)
+  0.00      5.36     0.00        3     0.00     0.00  void std::vector<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >, std::allocator<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > > >::_M_realloc_insert<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > >(__gnu_cxx::__normal_iterator<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >*, std::vector<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >, std::allocator<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > > > >, std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >&&)
+  0.00      5.36     0.00        1     0.00     5.36  large_test()
+  0.00      5.36     0.00        1     0.00     0.00  NNet::Net::train(std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > const&, std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > const&, unsigned int)
+  0.00      5.36     0.00        1     0.00     0.00  NNet::Net::Net(std::vector<unsigned int, std::allocator<unsigned int> > const&, unsigned int)
+  0.00      5.36     0.00        1     0.00     0.00  NNet::Net::~Net()
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.19% of 5.36 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00    5.36                 main [1]
+                0.00    5.36       1/1           large_test() [3]
+-----------------------------------------------
+                0.01    5.35      10/10          large_test() [3]
+[2]    100.0    0.01    5.35      10         void std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > >::_M_realloc_insert<std::vector<float, std::allocator<float> > const&>(__gnu_cxx::__normal_iterator<std::vector<float, std::allocator<float> >*, std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > >, std::vector<float, std::allocator<float> > const&) [2]
+                3.70    0.00 4823203/4823203     NNet::Neuron::update_input_weights(std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >&) [4]
+                1.50    0.00 3257154/3257154     NNet::Neuron::feed_forward(std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > const&, unsigned int) [5]
+                0.15    0.00  913473/913473      NNet::Neuron::calc_hidden_gradients(std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > const&) [6]
+-----------------------------------------------
+                0.00    5.36       1/1           main [1]
+[3]    100.0    0.00    5.36       1         large_test() [3]
+                0.01    5.35      10/10          void std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > >::_M_realloc_insert<std::vector<float, std::allocator<float> > const&>(__gnu_cxx::__normal_iterator<std::vector<float, std::allocator<float> >*, std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > >, std::vector<float, std::allocator<float> > const&) [2]
+                0.00    0.00      15/15          void std::vector<float, std::allocator<float> >::_M_realloc_insert<float const&>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float const&) [18]
+                0.00    0.00       1/1           NNet::Net::Net(std::vector<unsigned int, std::allocator<unsigned int> > const&, unsigned int) [21]
+                0.00    0.00       1/1           NNet::Net::train(std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > const&, std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > const&, unsigned int) [20]
+                0.00    0.00       1/1           NNet::Net::~Net() [22]
+-----------------------------------------------
+                3.70    0.00 4823203/4823203     void std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > >::_M_realloc_insert<std::vector<float, std::allocator<float> > const&>(__gnu_cxx::__normal_iterator<std::vector<float, std::allocator<float> >*, std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > >, std::vector<float, std::allocator<float> > const&) [2]
+[4]     69.0    3.70    0.00 4823203         NNet::Neuron::update_input_weights(std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >&) [4]
+-----------------------------------------------
+                1.50    0.00 3257154/3257154     void std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > >::_M_realloc_insert<std::vector<float, std::allocator<float> > const&>(__gnu_cxx::__normal_iterator<std::vector<float, std::allocator<float> >*, std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > >, std::vector<float, std::allocator<float> > const&) [2]
+[5]     28.0    1.50    0.00 3257154         NNet::Neuron::feed_forward(std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > const&, unsigned int) [5]
+-----------------------------------------------
+                0.15    0.00  913473/913473      void std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > >::_M_realloc_insert<std::vector<float, std::allocator<float> > const&>(__gnu_cxx::__normal_iterator<std::vector<float, std::allocator<float> >*, std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > >, std::vector<float, std::allocator<float> > const&) [2]
+[6]      2.8    0.15    0.00  913473         NNet::Neuron::calc_hidden_gradients(std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > const&) [6]
+-----------------------------------------------
+                0.00    0.00   15000/15000       NNet::Net::train(std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > const&, std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > const&, unsigned int) [20]
+[13]     0.0    0.00    0.00   15000         NNet::Net::back_prop(std::vector<float, std::allocator<float> > const&) [13]
+                0.00    0.00   15000/15000       NNet::Neuron::calc_output_gradients(float) [14]
+-----------------------------------------------
+                0.00    0.00   15000/15000       NNet::Net::back_prop(std::vector<float, std::allocator<float> > const&) [13]
+[14]     0.0    0.00    0.00   15000         NNet::Neuron::calc_output_gradients(float) [14]
+-----------------------------------------------
+                0.00    0.00    6979/6979        NNet::Neuron::Neuron(unsigned int, unsigned int, NNet::Net const*) [16]
+[15]     0.0    0.00    0.00    6979         void std::vector<NNet::Connection, std::allocator<NNet::Connection> >::_M_realloc_insert<NNet::Connection>(__gnu_cxx::__normal_iterator<NNet::Connection*, std::vector<NNet::Connection, std::allocator<NNet::Connection> > >, NNet::Connection&&) [15]
+-----------------------------------------------
+                0.00    0.00     845/845         NNet::Net::Net(std::vector<unsigned int, std::allocator<unsigned int> > const&, unsigned int) [21]
+[16]     0.0    0.00    0.00     845         NNet::Neuron::Neuron(unsigned int, unsigned int, NNet::Net const*) [16]
+                0.00    0.00    6979/6979        void std::vector<NNet::Connection, std::allocator<NNet::Connection> >::_M_realloc_insert<NNet::Connection>(__gnu_cxx::__normal_iterator<NNet::Connection*, std::vector<NNet::Connection, std::allocator<NNet::Connection> > >, NNet::Connection&&) [15]
+-----------------------------------------------
+                0.00    0.00      30/30          NNet::Net::Net(std::vector<unsigned int, std::allocator<unsigned int> > const&, unsigned int) [21]
+[17]     0.0    0.00    0.00      30         void std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >::_M_realloc_insert<NNet::Neuron>(__gnu_cxx::__normal_iterator<NNet::Neuron*, std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > >, NNet::Neuron&&) [17]
+-----------------------------------------------
+                0.00    0.00      15/15          large_test() [3]
+[18]     0.0    0.00    0.00      15         void std::vector<float, std::allocator<float> >::_M_realloc_insert<float const&>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float const&) [18]
+-----------------------------------------------
+                0.00    0.00       3/3           NNet::Net::Net(std::vector<unsigned int, std::allocator<unsigned int> > const&, unsigned int) [21]
+[19]     0.0    0.00    0.00       3         void std::vector<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >, std::allocator<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > > >::_M_realloc_insert<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > >(__gnu_cxx::__normal_iterator<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >*, std::vector<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >, std::allocator<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > > > >, std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >&&) [19]
+-----------------------------------------------
+                0.00    0.00       1/1           large_test() [3]
+[20]     0.0    0.00    0.00       1         NNet::Net::train(std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > const&, std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > const&, unsigned int) [20]
+                0.00    0.00   15000/15000       NNet::Net::back_prop(std::vector<float, std::allocator<float> > const&) [13]
+-----------------------------------------------
+                0.00    0.00       1/1           large_test() [3]
+[21]     0.0    0.00    0.00       1         NNet::Net::Net(std::vector<unsigned int, std::allocator<unsigned int> > const&, unsigned int) [21]
+                0.00    0.00     845/845         NNet::Neuron::Neuron(unsigned int, unsigned int, NNet::Net const*) [16]
+                0.00    0.00      30/30          void std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >::_M_realloc_insert<NNet::Neuron>(__gnu_cxx::__normal_iterator<NNet::Neuron*, std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > >, NNet::Neuron&&) [17]
+                0.00    0.00       3/3           void std::vector<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >, std::allocator<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > > >::_M_realloc_insert<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > >(__gnu_cxx::__normal_iterator<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >*, std::vector<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >, std::allocator<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > > > >, std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >&&) [19]
+-----------------------------------------------
+                0.00    0.00       1/1           large_test() [3]
+[22]     0.0    0.00    0.00       1         NNet::Net::~Net() [22]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2022 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [3] large_test()            [5] NNet::Neuron::feed_forward(std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > const&, unsigned int) [15] void std::vector<NNet::Connection, std::allocator<NNet::Connection> >::_M_realloc_insert<NNet::Connection>(__gnu_cxx::__normal_iterator<NNet::Connection*, std::vector<NNet::Connection, std::allocator<NNet::Connection> > >, NNet::Connection&&)
+  [20] NNet::Net::train(std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > const&, std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > const&, unsigned int) [4] NNet::Neuron::update_input_weights(std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >&) [17] void std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >::_M_realloc_insert<NNet::Neuron>(__gnu_cxx::__normal_iterator<NNet::Neuron*, std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > >, NNet::Neuron&&)
+  [13] NNet::Net::back_prop(std::vector<float, std::allocator<float> > const&) [6] NNet::Neuron::calc_hidden_gradients(std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > const&) [19] void std::vector<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >, std::allocator<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > > >::_M_realloc_insert<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > >(__gnu_cxx::__normal_iterator<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >*, std::vector<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >, std::allocator<std::vector<NNet::Neuron, std::allocator<NNet::Neuron> > > > >, std::vector<NNet::Neuron, std::allocator<NNet::Neuron> >&&)
+  [21] NNet::Net::Net(std::vector<unsigned int, std::allocator<unsigned int> > const&, unsigned int) [14] NNet::Neuron::calc_output_gradients(float) [2] void std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > >::_M_realloc_insert<std::vector<float, std::allocator<float> > const&>(__gnu_cxx::__normal_iterator<std::vector<float, std::allocator<float> >*, std::vector<std::vector<float, std::allocator<float> >, std::allocator<std::vector<float, std::allocator<float> > > > >, std::vector<float, std::allocator<float> > const&)
+  [22] NNet::Net::~Net()      [16] NNet::Neuron::Neuron(unsigned int, unsigned int, NNet::Net const*) [18] void std::vector<float, std::allocator<float> >::_M_realloc_insert<float const&>(__gnu_cxx::__normal_iterator<float*, std::vector<float, std::allocator<float> > >, float const&)

@@ -27,11 +27,14 @@ CMakeFiles/neural-net-c.dir/main.c.o: ../main.c \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
   /usr/include/x86_64-linux-gnu/bits/floatn.h \
   /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   ../include/neural-net.h \
   /usr/include/setjmp.h \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp2.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/stdlib.h \
@@ -53,6 +56,7 @@ CMakeFiles/neural-net-c.dir/main.c.o: ../main.c \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -60,7 +64,9 @@ CMakeFiles/neural-net-c.dir/main.c.o: ../main.c \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/include/omp.h \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -69,7 +75,33 @@ CMakeFiles/neural-net-c.dir/main.c.o: ../main.c \
   /usr/include/x86_64-linux-gnu/bits/fp-logb.h \
   /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
-  /usr/include/x86_64-linux-gnu/bits/mathcalls.h
+  /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+  ../include/imageloader.h \
+  /usr/include/dirent.h \
+  /usr/include/x86_64-linux-gnu/bits/dirent.h \
+  /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
+  /usr/include/linux/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
+  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
+  /usr/include/x86_64-linux-gnu/bits/dirent_ext.h \
+  /usr/local/include/png.h \
+  /usr/local/include/pnglibconf.h \
+  /usr/local/include/pngconf.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/include/limits.h \
+  /usr/lib/gcc/x86_64-linux-gnu/12/include/syslimits.h \
+  /usr/include/limits.h \
+  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/x86_64-linux-gnu/bits/strings_fortified.h \
+  /usr/include/x86_64-linux-gnu/bits/string_fortified.h
 
 CMakeFiles/neural-net-c.dir/src/net.c.o: ../src/net.c \
   /usr/include/stdc-predef.h \
@@ -86,6 +118,7 @@ CMakeFiles/neural-net-c.dir/src/net.c.o: ../src/net.c \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp2.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/stdlib.h \
@@ -114,6 +147,7 @@ CMakeFiles/neural-net-c.dir/src/net.c.o: ../src/net.c \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -121,7 +155,9 @@ CMakeFiles/neural-net-c.dir/src/net.c.o: ../src/net.c \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/stdio.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
@@ -131,6 +167,8 @@ CMakeFiles/neural-net-c.dir/src/net.c.o: ../src/net.c \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/include/omp.h \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -140,6 +178,12 @@ CMakeFiles/neural-net-c.dir/src/net.c.o: ../src/net.c \
   /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/assert.h
 
 CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
@@ -157,6 +201,7 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
   /usr/include/x86_64-linux-gnu/bits/setjmp.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h \
   /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+  /usr/include/x86_64-linux-gnu/bits/setjmp2.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/stdlib.h \
@@ -185,6 +230,7 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
   /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+  /usr/include/x86_64-linux-gnu/bits/select2.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
   /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
   /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
@@ -192,7 +238,9 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
   /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
   /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h \
   /usr/include/alloca.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
   /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+  /usr/include/x86_64-linux-gnu/bits/stdlib.h \
   /usr/include/stdio.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h \
   /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
@@ -202,6 +250,8 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
   /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h \
   /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio.h \
+  /usr/include/x86_64-linux-gnu/bits/stdio2.h \
   /usr/lib/gcc/x86_64-linux-gnu/12/include/omp.h \
   /usr/include/math.h \
   /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -211,18 +261,52 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
   /usr/include/x86_64-linux-gnu/bits/fp-fast.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h \
   /usr/include/x86_64-linux-gnu/bits/mathcalls.h \
+  /usr/include/time.h \
+  /usr/include/x86_64-linux-gnu/bits/time.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
   /usr/include/assert.h
 
 
-../src/neuron.c:
-
 /usr/include/assert.h:
+
+/usr/include/x86_64-linux-gnu/bits/string_fortified.h:
+
+/usr/include/x86_64-linux-gnu/bits/strings_fortified.h:
 
 ../src/net.c:
 
+/usr/include/x86_64-linux-gnu/bits/posix2_lim.h:
+
+/usr/local/include/pnglibconf.h:
+
+/usr/local/include/png.h:
+
+/usr/include/x86_64-linux-gnu/bits/dirent_ext.h:
+
+/usr/include/x86_64-linux-gnu/bits/local_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix1_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/dirent.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+../src/neuron.c:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
+../include/imageloader.h:
+
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/12/include/limits.h:
+
+/usr/include/time.h:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
@@ -230,15 +314,25 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
 
 /usr/include/math.h:
 
+/usr/include/strings.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/12/include/omp.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
 
 /usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs.h:
+/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
 
-/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+/usr/include/x86_64-linux-gnu/bits/types.h:
+
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
 /usr/include/features.h:
 
@@ -246,7 +340,19 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
 
 /usr/include/setjmp.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio.h:
+
+/usr/local/include/pngconf.h:
+
+/usr/include/dirent.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
@@ -257,8 +363,6 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
 /usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
-
-/usr/include/alloca.h:
 
 /usr/include/x86_64-linux-gnu/bits/typesizes.h:
 
@@ -272,17 +376,23 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
 
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
 /usr/include/stdio.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
+/usr/include/linux/limits.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
 
 /usr/include/stdc-predef.h:
 
@@ -292,15 +402,21 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-/usr/include/features-time64.h:
+/usr/lib/gcc/x86_64-linux-gnu/12/include/syslimits.h:
 
 /usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/stdlib.h:
 
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/features-time64.h:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
 /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h:
 
@@ -312,15 +428,21 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
 
 /usr/include/x86_64-linux-gnu/bits/select.h:
 
-/usr/include/asm-generic/errno.h:
+/usr/include/alloca.h:
 
-/usr/include/x86_64-linux-gnu/sys/select.h:
+/usr/include/x86_64-linux-gnu/bits/setjmp2.h:
 
 /usr/include/asm-generic/errno-base.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
@@ -330,11 +452,9 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
 
 /usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
 
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
-
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/include/string.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 
@@ -344,6 +464,12 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
 
+/usr/include/x86_64-linux-gnu/bits/select2.h:
+
+/usr/include/limits.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
+
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
@@ -351,9 +477,3 @@ CMakeFiles/neural-net-c.dir/src/neuron.c.o: ../src/neuron.c \
 /usr/include/x86_64-linux-gnu/bits/types/time_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
-
-/usr/include/x86_64-linux-gnu/bits/types.h:
-
-/usr/include/x86_64-linux-gnu/bits/atomic_wide_counter.h:
-
-/usr/include/x86_64-linux-gnu/bits/struct_rwlock.h:

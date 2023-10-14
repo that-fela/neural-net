@@ -571,6 +571,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural-net.dir/build.make CMakeFiles/neural-net.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/dataloader.o: src/dataloader.cpp.o
+.PHONY : src/dataloader.o
+
+# target to build an object file
+src/dataloader.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural-net.dir/build.make CMakeFiles/neural-net.dir/src/dataloader.cpp.o
+.PHONY : src/dataloader.cpp.o
+
+src/dataloader.i: src/dataloader.cpp.i
+.PHONY : src/dataloader.i
+
+# target to preprocess a source file
+src/dataloader.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural-net.dir/build.make CMakeFiles/neural-net.dir/src/dataloader.cpp.i
+.PHONY : src/dataloader.cpp.i
+
+src/dataloader.s: src/dataloader.cpp.s
+.PHONY : src/dataloader.s
+
+# target to generate assembly for a file
+src/dataloader.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural-net.dir/build.make CMakeFiles/neural-net.dir/src/dataloader.cpp.s
+.PHONY : src/dataloader.cpp.s
+
 src/n-net.o: src/n-net.cpp.o
 .PHONY : src/n-net.o
 
@@ -665,6 +689,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/dataloader.o"
+	@echo "... src/dataloader.i"
+	@echo "... src/dataloader.s"
 	@echo "... src/n-net.o"
 	@echo "... src/n-net.i"
 	@echo "... src/n-net.s"

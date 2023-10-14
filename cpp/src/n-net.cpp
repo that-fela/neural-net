@@ -1,4 +1,4 @@
-#include "n-net.h"
+#include "../include/n-net.h"
 #include <cassert>
 #include <cstddef>
 #include <fstream>
@@ -12,6 +12,7 @@ using namespace NNet;
 
 Net::Net(const std::vector<unsigned> &topology, unsigned num_threads){
     omp_set_num_threads(num_threads);
+    std::cout << "Using " << num_threads << " threads" << std::endl;
 
     unsigned num_layers = topology.size();
     assert(num_layers > 1);
@@ -141,7 +142,7 @@ void Net::train(
         }
 
         if (pass % 100 == 0) {
-            std::cout << "Pass: " << pass << "\tError: " << std::setprecision(6) << m_recent_avg_error << "\tTime per pass: " << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - time_per_pass).count() << "ms" << std::endl;
+            std::cout << "Pass: " << pass << "\tError: " << std::setprecision(6) << m_recent_avg_error << "\tTime: " << std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - time_per_pass).count() << "ms/100p" << std::endl;
             time_per_pass = std::chrono::high_resolution_clock::now();
         }
     }

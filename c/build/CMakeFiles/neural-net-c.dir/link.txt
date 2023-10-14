@@ -1,1 +1,1 @@
-/usr/bin/gcc-12  -fopenmp -g  -fopenmp -rdynamic CMakeFiles/neural-net-c.dir/main.c.o CMakeFiles/neural-net-c.dir/src/net.c.o CMakeFiles/neural-net-c.dir/src/neuron.c.o -o neural-net-c  -lm 
+/usr/bin/gcc-12  -fopenmp -O3 -DNDEBUG  -fopenmp -rdynamic CMakeFiles/neural-net-c.dir/main.c.o CMakeFiles/neural-net-c.dir/src/net.c.o CMakeFiles/neural-net-c.dir/src/neuron.c.o -o neural-net-c  -Wl,-rpath,/usr/local/lib -lm /usr/local/lib/libpng.so 

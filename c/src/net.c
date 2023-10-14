@@ -1,8 +1,10 @@
 #include "../include/neural-net.h"
 #include <assert.h>
+#include <time.h>
 
 Net nn_create_net(unsigned num_layers, unsigned *input_layer_sizes, unsigned thread_count) {
     omp_set_num_threads(thread_count);
+    printf("Using %d threads\n", thread_count);
 
     assert(num_layers > 1);
     assert(num_layers <= NN_MAX_LAYERS);
@@ -54,8 +56,8 @@ void nn_feed_forward(Net *net, netnum_t *input, unsigned input_size) {
     for (unsigned layer = 1; layer < net->num_layers; layer++) {
         Neuron *prev_layer = net->layers[layer - 1];
 
-        // #pragma omp parallel for
         unsigned limit = net->layer_sizes[layer] - 1;
+        #pragma omp parallel for
         for (unsigned neuron = 0; neuron < limit; neuron++) {
             Neuron *to_be_fed = &net->layers[layer][neuron];
             unsigned prev_layer_size = net->layer_sizes[layer - 1];
@@ -92,7 +94,7 @@ void nn_back_prop(Net *net, netnum_t *expected_output, unsigned expected_size) {
         Neuron *hidden_layer = net->layers[layer];
         Neuron *next_layer = net->layers[layer + 1];
 
-        // #pragma omp parallel for
+        #pragma omp parallel for
         for (unsigned n = 0; n < net->layer_sizes[layer]; n++) {
             nn_neuron_calc_hidden_gradients(&hidden_layer[n], next_layer, net->layer_sizes[layer + 1]);
         }
@@ -102,7 +104,7 @@ void nn_back_prop(Net *net, netnum_t *expected_output, unsigned expected_size) {
         Neuron *layer = net->layers[l];
         Neuron *prev_layer = net->layers[l - 1];
 
-        // #pragma omp parallel for
+        #pragma omp parallel for
         for (unsigned n = 0; n < net->layer_sizes[l] - 1; n++) {
             nn_neuron_update_input_weights(&layer[n], prev_layer, net->layer_sizes[l - 1]);
         }
@@ -115,4 +117,35 @@ void nn_get_results(Net *net, netnum_t *result, unsigned result_size) {
     for (unsigned n = 0; n < result_size; n++) {
         result[n] = net->layers[net->num_layers - 1][n].output;
     }
+}
+
+void nn_train(
+    Net *net, unsigned num_passes,
+    netnum_t **train_input, unsigned train_input_size, unsigned train_input_width,
+    netnum_t **expected_output, unsigned expected_output_size, unsigned expected_output_width
+) {
+    assert(train_input_width == net->layer_sizes[0] - 1);
+    assert(expected_output_width == net->layer_sizes[net->num_layers - 1] - 1);
+
+    netnum_t *input = (netnum_t*)(train_input);
+    netnum_t *output = (netnum_t*)(expected_output);
+
+    printf("Training...\n");
+
+    clock_t start = clock();
+
+    for (unsigned pass = 0; pass < num_passes; pass++) {
+        for (unsigned i = 0; i < train_input_size; i++) {
+            nn_feed_forward(net, (netnum_t*)&(input[i * train_input_width]), train_input_width);
+            nn_back_prop(net, (netnum_t*)&(output[i * expected_output_width]), expected_output_width);
+        }
+
+        if (pass % 100 == 0) {
+            printf("Pass: %d, Error: %f\t", pass, net->recent_average_error);
+            printf("Timer per pass: %fms\n", (double)(clock() - start) / pass / 100); 
+        }
+    }
+
+    clock_t end = clock();
+    printf("Training time: %fs\n", (double)(end - start) / CLOCKS_PER_SEC);
 }

@@ -1,3 +1,5 @@
+#pragma once
+
 #include <vector>
 #include <iostream>
 #include <cassert>
@@ -81,24 +83,4 @@ namespace NNet {
         netnum_t                m_gradient;
         const Net               *m_net;
     };
-
-
-    // -------------
-    // DataLoader
-    // -------------
-    // class DataLoader {
-    // public:
-    //     DataLoader() {}
-    //     ~DataLoader() {}
-
-    //     static DataLoader from_png_folder(const char *filename);
-    //     static netnum_vec_t from_png(const char *filename, const std::vector<netnum_t> &target);
-
-    //     netnum_mat_t get_input_values() const { return m_input_values; }
-    //     netnum_mat_t get_target_values() const { return m_target_values; }
-    // private:
-
-    //     netnum_mat_t m_input_values;
-    //     netnum_mat_t m_target_values;
-    // };
 }

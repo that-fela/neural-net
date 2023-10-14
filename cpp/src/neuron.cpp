@@ -1,21 +1,21 @@
-#include "n-net.h"
+#include "../include/n-net.h"
 
 using namespace NNet;
 
-netnum_t random_weight() {
+inline netnum_t random_weight() {
     return rand() / (netnum_t)(RAND_MAX);
 }
 
-netnum_t transfer_func(netnum_t num) {
+inline netnum_t transfer_func(netnum_t num) {
     // return 1.0 / (1.0 + exp(-num)); // sigmoid
-    // return num / (1 + fabsf(num)); // fast sigmoid
-    return tanh(num); // tanh
+    return num / (1 + fabsf(num)); // fast sigmoid
+    // return tanh(num); // tanh
 }
 
-netnum_t transfer_func_derv(netnum_t num) {
+inline netnum_t transfer_func_derv(netnum_t num) {
     // using derivative of sigmoid
-    // return 1.0 / (1.0 + fabs(num)) * 1.0 / (1.0 + fabs(num)); // (1 - o) simplifies to o squared
-    return 1.0 - num * num;
+    return 1.0 / (1.0 + fabs(num)) * 1.0 / (1.0 + fabs(num)); // (1 - o) simplifies to o squared
+    // return 1.0 - num * num;
 }
 
 Neuron::Neuron(unsigned num_outputs, unsigned index, const Net *net_ref) {

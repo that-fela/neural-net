@@ -73,64 +73,79 @@ CMakeFiles/neural-net.dir/main.cpp.o: CMakeFiles/neural-net.dir/flags.make
 CMakeFiles/neural-net.dir/main.cpp.o: ../main.cpp
 CMakeFiles/neural-net.dir/main.cpp.o: CMakeFiles/neural-net.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/dev/neural-net/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/neural-net.dir/main.cpp.o"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neural-net.dir/main.cpp.o -MF CMakeFiles/neural-net.dir/main.cpp.o.d -o CMakeFiles/neural-net.dir/main.cpp.o -c /home/leo/dev/neural-net/cpp/main.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neural-net.dir/main.cpp.o -MF CMakeFiles/neural-net.dir/main.cpp.o.d -o CMakeFiles/neural-net.dir/main.cpp.o -c /home/leo/dev/neural-net/cpp/main.cpp
 
 CMakeFiles/neural-net.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/neural-net.dir/main.cpp.i"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/dev/neural-net/cpp/main.cpp > CMakeFiles/neural-net.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/dev/neural-net/cpp/main.cpp > CMakeFiles/neural-net.dir/main.cpp.i
 
 CMakeFiles/neural-net.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/neural-net.dir/main.cpp.s"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/dev/neural-net/cpp/main.cpp -o CMakeFiles/neural-net.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/dev/neural-net/cpp/main.cpp -o CMakeFiles/neural-net.dir/main.cpp.s
 
 CMakeFiles/neural-net.dir/src/n-net.cpp.o: CMakeFiles/neural-net.dir/flags.make
 CMakeFiles/neural-net.dir/src/n-net.cpp.o: ../src/n-net.cpp
 CMakeFiles/neural-net.dir/src/n-net.cpp.o: CMakeFiles/neural-net.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/dev/neural-net/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/neural-net.dir/src/n-net.cpp.o"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neural-net.dir/src/n-net.cpp.o -MF CMakeFiles/neural-net.dir/src/n-net.cpp.o.d -o CMakeFiles/neural-net.dir/src/n-net.cpp.o -c /home/leo/dev/neural-net/cpp/src/n-net.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neural-net.dir/src/n-net.cpp.o -MF CMakeFiles/neural-net.dir/src/n-net.cpp.o.d -o CMakeFiles/neural-net.dir/src/n-net.cpp.o -c /home/leo/dev/neural-net/cpp/src/n-net.cpp
 
 CMakeFiles/neural-net.dir/src/n-net.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/neural-net.dir/src/n-net.cpp.i"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/dev/neural-net/cpp/src/n-net.cpp > CMakeFiles/neural-net.dir/src/n-net.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/dev/neural-net/cpp/src/n-net.cpp > CMakeFiles/neural-net.dir/src/n-net.cpp.i
 
 CMakeFiles/neural-net.dir/src/n-net.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/neural-net.dir/src/n-net.cpp.s"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/dev/neural-net/cpp/src/n-net.cpp -o CMakeFiles/neural-net.dir/src/n-net.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/dev/neural-net/cpp/src/n-net.cpp -o CMakeFiles/neural-net.dir/src/n-net.cpp.s
 
 CMakeFiles/neural-net.dir/src/neuron.cpp.o: CMakeFiles/neural-net.dir/flags.make
 CMakeFiles/neural-net.dir/src/neuron.cpp.o: ../src/neuron.cpp
 CMakeFiles/neural-net.dir/src/neuron.cpp.o: CMakeFiles/neural-net.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/dev/neural-net/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/neural-net.dir/src/neuron.cpp.o"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neural-net.dir/src/neuron.cpp.o -MF CMakeFiles/neural-net.dir/src/neuron.cpp.o.d -o CMakeFiles/neural-net.dir/src/neuron.cpp.o -c /home/leo/dev/neural-net/cpp/src/neuron.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neural-net.dir/src/neuron.cpp.o -MF CMakeFiles/neural-net.dir/src/neuron.cpp.o.d -o CMakeFiles/neural-net.dir/src/neuron.cpp.o -c /home/leo/dev/neural-net/cpp/src/neuron.cpp
 
 CMakeFiles/neural-net.dir/src/neuron.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/neural-net.dir/src/neuron.cpp.i"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/dev/neural-net/cpp/src/neuron.cpp > CMakeFiles/neural-net.dir/src/neuron.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/dev/neural-net/cpp/src/neuron.cpp > CMakeFiles/neural-net.dir/src/neuron.cpp.i
 
 CMakeFiles/neural-net.dir/src/neuron.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/neural-net.dir/src/neuron.cpp.s"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/dev/neural-net/cpp/src/neuron.cpp -o CMakeFiles/neural-net.dir/src/neuron.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/dev/neural-net/cpp/src/neuron.cpp -o CMakeFiles/neural-net.dir/src/neuron.cpp.s
 
 CMakeFiles/neural-net.dir/lib/lodepng.cpp.o: CMakeFiles/neural-net.dir/flags.make
 CMakeFiles/neural-net.dir/lib/lodepng.cpp.o: ../lib/lodepng.cpp
 CMakeFiles/neural-net.dir/lib/lodepng.cpp.o: CMakeFiles/neural-net.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/dev/neural-net/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/neural-net.dir/lib/lodepng.cpp.o"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neural-net.dir/lib/lodepng.cpp.o -MF CMakeFiles/neural-net.dir/lib/lodepng.cpp.o.d -o CMakeFiles/neural-net.dir/lib/lodepng.cpp.o -c /home/leo/dev/neural-net/cpp/lib/lodepng.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neural-net.dir/lib/lodepng.cpp.o -MF CMakeFiles/neural-net.dir/lib/lodepng.cpp.o.d -o CMakeFiles/neural-net.dir/lib/lodepng.cpp.o -c /home/leo/dev/neural-net/cpp/lib/lodepng.cpp
 
 CMakeFiles/neural-net.dir/lib/lodepng.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/neural-net.dir/lib/lodepng.cpp.i"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/dev/neural-net/cpp/lib/lodepng.cpp > CMakeFiles/neural-net.dir/lib/lodepng.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/dev/neural-net/cpp/lib/lodepng.cpp > CMakeFiles/neural-net.dir/lib/lodepng.cpp.i
 
 CMakeFiles/neural-net.dir/lib/lodepng.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/neural-net.dir/lib/lodepng.cpp.s"
-	/usr/bin/g++-10 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/dev/neural-net/cpp/lib/lodepng.cpp -o CMakeFiles/neural-net.dir/lib/lodepng.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/dev/neural-net/cpp/lib/lodepng.cpp -o CMakeFiles/neural-net.dir/lib/lodepng.cpp.s
+
+CMakeFiles/neural-net.dir/src/dataloader.cpp.o: CMakeFiles/neural-net.dir/flags.make
+CMakeFiles/neural-net.dir/src/dataloader.cpp.o: ../src/dataloader.cpp
+CMakeFiles/neural-net.dir/src/dataloader.cpp.o: CMakeFiles/neural-net.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/leo/dev/neural-net/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/neural-net.dir/src/dataloader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/neural-net.dir/src/dataloader.cpp.o -MF CMakeFiles/neural-net.dir/src/dataloader.cpp.o.d -o CMakeFiles/neural-net.dir/src/dataloader.cpp.o -c /home/leo/dev/neural-net/cpp/src/dataloader.cpp
+
+CMakeFiles/neural-net.dir/src/dataloader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/neural-net.dir/src/dataloader.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/leo/dev/neural-net/cpp/src/dataloader.cpp > CMakeFiles/neural-net.dir/src/dataloader.cpp.i
+
+CMakeFiles/neural-net.dir/src/dataloader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/neural-net.dir/src/dataloader.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/leo/dev/neural-net/cpp/src/dataloader.cpp -o CMakeFiles/neural-net.dir/src/dataloader.cpp.s
 
 # Object files for target neural-net
 neural__net_OBJECTS = \
 "CMakeFiles/neural-net.dir/main.cpp.o" \
 "CMakeFiles/neural-net.dir/src/n-net.cpp.o" \
 "CMakeFiles/neural-net.dir/src/neuron.cpp.o" \
-"CMakeFiles/neural-net.dir/lib/lodepng.cpp.o"
+"CMakeFiles/neural-net.dir/lib/lodepng.cpp.o" \
+"CMakeFiles/neural-net.dir/src/dataloader.cpp.o"
 
 # External object files for target neural-net
 neural__net_EXTERNAL_OBJECTS =
@@ -139,9 +154,10 @@ neural-net: CMakeFiles/neural-net.dir/main.cpp.o
 neural-net: CMakeFiles/neural-net.dir/src/n-net.cpp.o
 neural-net: CMakeFiles/neural-net.dir/src/neuron.cpp.o
 neural-net: CMakeFiles/neural-net.dir/lib/lodepng.cpp.o
+neural-net: CMakeFiles/neural-net.dir/src/dataloader.cpp.o
 neural-net: CMakeFiles/neural-net.dir/build.make
 neural-net: CMakeFiles/neural-net.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/leo/dev/neural-net/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable neural-net"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/leo/dev/neural-net/cpp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable neural-net"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/neural-net.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

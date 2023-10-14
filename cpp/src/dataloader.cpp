@@ -1,8 +1,5 @@
-#include "n-net.h"
-
+#include "../include/dataloader.h"
 #include "../lib/lodepng.h"
-#include <cassert>
-
 
 using namespace NNet;
 
