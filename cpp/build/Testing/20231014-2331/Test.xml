@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Site BuildName="Linux-c++"
+	BuildStamp="20231014-2331-Experimental"
+	Name="DESKTOPfdsfsdf"
+	Generator="ctest-3.22.1"
+	CompilerName="/usr/bin/c++"
+	CompilerVersion="11.4.0"
+	OSName="Linux"
+	Hostname="DESKTOPfdsfsdf"
+	OSRelease="5.15.0-86-generic"
+	OSVersion="#96-Ubuntu SMP Wed Sep 20 08:23:49 UTC 2023"
+	OSPlatform="x86_64"
+	Is64Bits="1"
+	VendorString="GenuineIntel"
+	VendorID="Intel Corporation"
+	FamilyID="6"
+	ModelID="165"
+	ProcessorCacheSize="12288"
+	NumberOfLogicalCPU="12"
+	NumberOfPhysicalCPU="6"
+	TotalVirtualMemory="24999"
+	TotalPhysicalMemory="23961"
+	LogicalProcessorsPerPhysical="2"
+	ProcessorClockFrequency="4100"
+	>
+	<Testing>
+		<StartDateTime>Oct 15 12:37 NZDT</StartDateTime>
+		<StartTestTime>1697326644</StartTestTime>
+		<TestList>
+			<Test>./tests/neuron</Test>
+		</TestList>
+		<Test Status="passed">
+			<Name>neuron</Name>
+			<Path>./tests</Path>
+			<FullName>./tests/neuron</FullName>
+			<FullCommandLine>/home/leo/dev/neural-net/cpp/build/tests/neuron_test</FullCommandLine>
+			<Results>
+				<NamedMeasurement type="numeric/double" name="Execution Time">
+					<Value>0.00180476</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="numeric/double" name="Processors">
+					<Value>1</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Completion Status">
+					<Value>Completed</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Command Line">
+					<Value>/home/leo/dev/neural-net/cpp/build/tests/neuron_test</Value>
+				</NamedMeasurement>
+				<NamedMeasurement type="text/string" name="Environment">
+					<Value>#CTEST_RESOURCE_GROUP_COUNT=</Value>
+				</NamedMeasurement>
+				<Measurement>
+					<Value encoding="base64" compression="gzip">eJyNkE0KwjAQhfc5xSztokEP4ELQuhCqtLoKXUQ6SiGdSDqx1zcaLFUo9K3m52Meb9R6UAWFJ2roDitg7BhuzrbfuvMNoxQqHVTB3tirNnGP9GycpRYpsMipf/zB45s5+sCeQy8UFJccPqpGc5kh1pl1vXZ1YKKOh0kGFktou2SOZUSBLWuTiHmJGLVLa9uTUON/Tf0JnCb56xMynDZludu+c0ZWihc0zHRd====</Value>
+				</Measurement>
+			</Results>
+		</Test>
+		<EndDateTime>Oct 15 12:37 NZDT</EndDateTime>
+		<EndTestTime>1697326644</EndTestTime>
+		<ElapsedMinutes>0</ElapsedMinutes>
+	</Testing>
+</Site>

@@ -523,6 +523,19 @@ neural-net/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural-net.dir/build.make CMakeFiles/neural-net.dir/build
 .PHONY : neural-net/fast
 
+#=============================================================================
+# Target rules for targets named neuron_test
+
+# Build rule for target.
+neuron_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 neuron_test
+.PHONY : neuron_test
+
+# fast build rule for target.
+neuron_test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/neuron_test.dir/build.make tests/CMakeFiles/neuron_test.dir/build
+.PHONY : neuron_test/fast
+
 lib/lodepng.o: lib/lodepng.cpp.o
 .PHONY : lib/lodepng.o
 
@@ -683,6 +696,7 @@ help:
 	@echo "... NightlyTest"
 	@echo "... NightlyUpdate"
 	@echo "... neural-net"
+	@echo "... neuron_test"
 	@echo "... lib/lodepng.o"
 	@echo "... lib/lodepng.i"
 	@echo "... lib/lodepng.s"

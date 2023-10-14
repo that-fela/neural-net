@@ -23,5 +23,20 @@
   "directory": "/home/leo/dev/neural-net/cpp/build",
   "command": "/usr/bin/c++    -pg -fopenmp -std=c++17 -O3 -DNDEBUG -o CMakeFiles/neural-net.dir/src/dataloader.cpp.o -c /home/leo/dev/neural-net/cpp/src/dataloader.cpp",
   "file": "/home/leo/dev/neural-net/cpp/src/dataloader.cpp"
+},
+{
+  "directory": "/home/leo/dev/neural-net/cpp/build/tests",
+  "command": "/usr/bin/c++    -pg -fopenmp -std=c++17 -O3 -DNDEBUG -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/neuron_test.dir/test_neuron.cpp.o -c /home/leo/dev/neural-net/cpp/tests/test_neuron.cpp",
+  "file": "/home/leo/dev/neural-net/cpp/tests/test_neuron.cpp"
+},
+{
+  "directory": "/home/leo/dev/neural-net/cpp/build/tests",
+  "command": "/usr/bin/c++    -pg -fopenmp -std=c++17 -O3 -DNDEBUG -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/neuron_test.dir/__/src/n-net.cpp.o -c /home/leo/dev/neural-net/cpp/src/n-net.cpp",
+  "file": "/home/leo/dev/neural-net/cpp/src/n-net.cpp"
+},
+{
+  "directory": "/home/leo/dev/neural-net/cpp/build/tests",
+  "command": "/usr/bin/c++    -pg -fopenmp -std=c++17 -O3 -DNDEBUG -DGTEST_HAS_PTHREAD=1 -o CMakeFiles/neuron_test.dir/__/src/neuron.cpp.o -c /home/leo/dev/neural-net/cpp/src/neuron.cpp",
+  "file": "/home/leo/dev/neural-net/cpp/src/neuron.cpp"
 }
 ]

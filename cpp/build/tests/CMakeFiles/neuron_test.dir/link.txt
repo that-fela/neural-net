@@ -1,0 +1,1 @@
+/usr/bin/c++  -pg -fopenmp -std=c++17 -O3 -DNDEBUG  -pg -fopenmp -std=c++17 -rdynamic CMakeFiles/neuron_test.dir/test_neuron.cpp.o CMakeFiles/neuron_test.dir/__/src/n-net.cpp.o CMakeFiles/neuron_test.dir/__/src/neuron.cpp.o -o neuron_test  /usr/lib/x86_64-linux-gnu/libgtest.a 

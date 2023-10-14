@@ -32,3 +32,9 @@
 /home/leo/dev/neural-net/cpp/build/CMakeFiles/test.dir
 /home/leo/dev/neural-net/cpp/build/CMakeFiles/edit_cache.dir
 /home/leo/dev/neural-net/cpp/build/CMakeFiles/rebuild_cache.dir
+/home/leo/dev/neural-net/cpp/build/tests/CMakeFiles/neuron_test.dir
+/home/leo/dev/neural-net/cpp/build/tests/CMakeFiles/package.dir
+/home/leo/dev/neural-net/cpp/build/tests/CMakeFiles/package_source.dir
+/home/leo/dev/neural-net/cpp/build/tests/CMakeFiles/test.dir
+/home/leo/dev/neural-net/cpp/build/tests/CMakeFiles/edit_cache.dir
+/home/leo/dev/neural-net/cpp/build/tests/CMakeFiles/rebuild_cache.dir

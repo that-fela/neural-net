@@ -202,7 +202,7 @@ void test_images() {
     net.save_model("my-hand-written-numbers.net");
 
 
-    auto to_test = DataLoader::from_png("../../test-data/my-hand-written-numbers/2.png", {});
+    auto to_test = DataLoader::from_png("../../5_test.png", {});
     
     // print the to_test image
     // for (int i = 0; i < 20; i++) {

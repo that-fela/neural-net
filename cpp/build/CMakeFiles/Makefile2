@@ -64,10 +64,11 @@ CMAKE_BINARY_DIR = /home/leo/dev/neural-net/cpp/build
 
 # The main recursive "all" target.
 all: CMakeFiles/neural-net.dir/all
+all: tests/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: tests/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
@@ -100,7 +101,23 @@ clean: CMakeFiles/ContinuousCoverage.dir/clean
 clean: CMakeFiles/ContinuousMemCheck.dir/clean
 clean: CMakeFiles/ContinuousSubmit.dir/clean
 clean: CMakeFiles/neural-net.dir/clean
+clean: tests/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory tests
+
+# Recursive "all" directory target.
+tests/all: tests/CMakeFiles/neuron_test.dir/all
+.PHONY : tests/all
+
+# Recursive "preinstall" directory target.
+tests/preinstall:
+.PHONY : tests/preinstall
+
+# Recursive "clean" directory target.
+tests/clean: tests/CMakeFiles/neuron_test.dir/clean
+.PHONY : tests/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Experimental.dir
@@ -855,6 +872,32 @@ neural-net: CMakeFiles/neural-net.dir/rule
 CMakeFiles/neural-net.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/neural-net.dir/build.make CMakeFiles/neural-net.dir/clean
 .PHONY : CMakeFiles/neural-net.dir/clean
+
+#=============================================================================
+# Target rules for target tests/CMakeFiles/neuron_test.dir
+
+# All Build rule for target.
+tests/CMakeFiles/neuron_test.dir/all:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/neuron_test.dir/build.make tests/CMakeFiles/neuron_test.dir/depend
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/neuron_test.dir/build.make tests/CMakeFiles/neuron_test.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/leo/dev/neural-net/cpp/build/CMakeFiles --progress-num=7,8,9,10 "Built target neuron_test"
+.PHONY : tests/CMakeFiles/neuron_test.dir/all
+
+# Build rule for subdir invocation for target.
+tests/CMakeFiles/neuron_test.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/dev/neural-net/cpp/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests/CMakeFiles/neuron_test.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/leo/dev/neural-net/cpp/build/CMakeFiles 0
+.PHONY : tests/CMakeFiles/neuron_test.dir/rule
+
+# Convenience name for target.
+neuron_test: tests/CMakeFiles/neuron_test.dir/rule
+.PHONY : neuron_test
+
+# clean rule for target.
+tests/CMakeFiles/neuron_test.dir/clean:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/neuron_test.dir/build.make tests/CMakeFiles/neuron_test.dir/clean
+.PHONY : tests/CMakeFiles/neuron_test.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
